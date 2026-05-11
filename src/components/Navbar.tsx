@@ -27,19 +27,21 @@ export default function Navbar() {
       (entries) => {
 
         const visibleSection = entries
-  .filter((entry) => entry.isIntersecting)
-  .sort(
-    (a, b) => b.intersectionRatio - a.intersectionRatio
-  )[0];
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => b.intersectionRatio - a.intersectionRatio
+          )[0];
 
-if (visibleSection) {
-  setActiveSection(visibleSection.target.id);
-}
+        if (visibleSection) {
+
+          setActiveSection(visibleSection.target.id);
+
+        }
 
       },
       {
         threshold: 0.2,
-rootMargin: "-100px 0px -40% 0px",
+        rootMargin: "-100px 0px -40% 0px",
       }
     );
 
@@ -57,7 +59,9 @@ rootMargin: "-100px 0px -40% 0px",
 
     const handleScroll = () => {
 
-      setScrolled(window.scrollY > 30);
+      const currentScroll = window.scrollY;
+
+      setScrolled(currentScroll > 30);
 
     };
 
@@ -90,9 +94,9 @@ rootMargin: "-100px 0px -40% 0px",
   return (
 
     <motion.header
-    style={{
-    willChange: "transform",
-  }}
+      style={{
+        willChange: "transform",
+      }}
       initial={{
         y: -100,
       }}
@@ -101,12 +105,13 @@ rootMargin: "-100px 0px -40% 0px",
       }}
       transition={{
         duration: 0.7,
+        ease: "easeOut",
       }}
-      className={`fixed top-[36px] z-50 w-full border-b border-white/10 transition-all duration-500 ${
-  scrolled
-    ? "bg-black/75 backdrop-blur-md"
-    : "bg-black/30 backdrop-blur-sm"
-}`}
+      className={`relative z-50 w-full border-b border-white/10 transition-[background-color,backdrop-filter] duration-300 ${
+        scrolled
+          ? "bg-black/75 backdrop-blur-md"
+          : "bg-black/30 backdrop-blur-sm"
+      }`}
     >
 
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">

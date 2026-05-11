@@ -7,8 +7,10 @@ import {
 } from "lucide-react";
 
 export default function TopBar() {
+
   return (
-    <div className="fixed top-0 z-[60] hidden w-full border-b border-white/5 bg-black/95 backdrop-blur-xl lg:block">
+
+    <div className="hidden w-full border-b border-white/5 bg-black/95 backdrop-blur-md lg:block">
 
       <div className="mx-auto flex h-[44px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
@@ -20,7 +22,7 @@ export default function TopBar() {
             <MapPin size={13} className="text-red-500" />
 
             <span>
-              Buenos aires, Argentina
+              Buenos Aires, Argentina
             </span>
 
           </div>
@@ -53,7 +55,7 @@ export default function TopBar() {
           {/* Instagram */}
           <a
             href="#"
-            className="text-red-500 transition hover:text-white"
+            className="text-red-500 transition-colors duration-300 hover:text-white"
           >
 
             <svg
