@@ -72,7 +72,10 @@ export default function Testimonials() {
 
   return (
 
-    <section className="relative overflow-hidden bg-black py-24">
+    <section
+  id="testimonials"
+  className="relative overflow-hidden bg-black py-24"
+>
 
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-red-500/10 blur-[160px]" />
@@ -85,7 +88,7 @@ export default function Testimonials() {
 
   {/* IMAGE */}
   <img
-    src="/images/final.png"
+    src="/images/final.webp"
     alt="Background"
     className="h-full w-full object-cover opacity-45"
   />

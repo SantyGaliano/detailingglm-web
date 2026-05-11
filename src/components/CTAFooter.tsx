@@ -14,7 +14,10 @@ export default function CTAFooter() {
 
   return (
 
-    <footer className="relative overflow-hidden bg-transparent">
+    <footer
+  id="contact"
+  className="relative overflow-hidden bg-transparent"
+>
 
       {/* TOP CTA */}
       <section className="relative overflow-hidden border-y border-white/10">
@@ -24,7 +27,7 @@ export default function CTAFooter() {
 
   {/* Image */}
   <img
-    src="/images/cta.png"
+    src="/images/cta.webp"
     alt="CTA Background"
     className="h-full w-full object-cover opacity-55"
   />

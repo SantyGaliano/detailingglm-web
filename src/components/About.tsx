@@ -39,7 +39,10 @@ export default function About() {
 
   return (
 
-    <section className="relative overflow-hidden bg-black py-24">
+    <section
+  id="about"
+  className="relative overflow-hidden bg-black py-24"
+>
 
       {/* Ambient Glow */}
       <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-red-500/10 blur-[140px]" />
@@ -208,7 +211,7 @@ export default function About() {
             <div className="group relative overflow-hidden rounded-[34px] border border-white/10">
 
               <img
-                src="/images/about.png"
+                src="/images/about.webp"
                 alt="Detailing Studio"
                 className="h-[650px] w-full object-cover transition-all duration-700 group-hover:brightness-110"
               />

@@ -68,7 +68,10 @@ export default function BeforeAfter() {
 
   return (
 
-    <section className="relative h-screen overflow-hidden bg-black">
+    <section
+  id="before-after"
+  className="relative h-screen overflow-hidden bg-black"
+>
 
       {/* Background Container */}
       <div
@@ -78,7 +81,7 @@ export default function BeforeAfter() {
 
         {/* DIRTY IMAGE BASE */}
         <img
-          src="/images/car-before.jpg"
+          src="/images/car-before.webp"
           alt="Before"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -92,7 +95,7 @@ export default function BeforeAfter() {
         >
 
           <img
-            src="/images/car-after.jpg"
+            src="/images/car-after.webp"
             alt="After"
             className="absolute inset-0 h-full w-full object-cover"
           />

@@ -8,13 +8,13 @@ export default function Hero() {
 
   const mouseY = useMotionValue(0);
 
-  const backgroundX = useTransform(mouseX, [-500, 500], [-5, 5]);
+  const backgroundX = useTransform(mouseX, [-500, 500], [-2, 2]);
 
-  const backgroundY = useTransform(mouseY, [-500, 500], [-5, 5]);
+  const backgroundY = useTransform(mouseY, [-500, 500], [-2, 2]);
 
-  const glowX = useTransform(mouseX, [-500, 500], [-12, 12]);
+  const glowX = useTransform(mouseX, [-500, 500], [-4, 4]);
 
-  const glowY = useTransform(mouseY, [-500, 500], [-12, 12]);
+  const glowY = useTransform(mouseY, [-500, 500], [-4, 4]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
 
@@ -32,10 +32,10 @@ export default function Hero() {
 
   return (
 
-    <section
-      onMouseMove={handleMouseMove}
-      className="relative flex min-h-screen overflow-hidden bg-black"
-    >
+   <section
+  id="home"
+  className="relative flex min-h-screen overflow-hidden bg-black"
+>
 
       {/* VIDEO BACKGROUND */}
       <motion.div
@@ -43,7 +43,7 @@ export default function Hero() {
           x: backgroundX,
           y: backgroundY,
         }}
-        className="absolute inset-0 scale-[1.03]"
+        className="gpu absolute inset-0 scale-[1.03]"
       >
 
         <video
@@ -51,6 +51,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="metadata"
           className="h-full w-full object-cover"
         >
 
@@ -68,8 +69,6 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/10" />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-
       {/* AMBIENT GLOW */}
       <motion.div
         style={{
@@ -85,7 +84,7 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute right-0 top-0 h-[700px] w-[700px] rounded-full bg-red-500/10 blur-[120px]"
+        className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-red-500/10 blur-[60px]"
       />
 
       {/* VIGNETTE */}
@@ -96,15 +95,13 @@ export default function Hero() {
 
         <motion.div
           initial={{
-            opacity: 0,
-            y: 60,
-            filter: "blur(10px)",
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-            filter: "blur(0px)",
-          }}
+  opacity: 0,
+  y: 40,
+}}
+animate={{
+  opacity: 1,
+  y: 0,
+}}
           transition={{
             duration: 1.2,
             ease: [0.22, 1, 0.36, 1],
@@ -163,7 +160,7 @@ export default function Hero() {
 
             </button>
 
-            <button className="border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white backdrop-blur-md transition-all duration-300 hover:border-white hover:bg-white hover:text-black">
+            <button className="border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white bg-black/40 transition-all duration-300 hover:border-white hover:bg-white hover:text-black">
 
               Ver Trabajos
 
