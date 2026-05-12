@@ -41,12 +41,17 @@ export default function Home() {
       <CustomCursor />
 
       <motion.div
+  initial={{
+    y: -100,
+    opacity: 0,
+  }}
   animate={{
     y: hideTopBar ? -44 : 0,
+    opacity: 1,
   }}
   transition={{
-    duration: 0.35,
-    ease: "easeInOut",
+    duration: 0.7,
+    ease: "easeOut",
   }}
   className="fixed top-0 left-0 z-50 w-full"
 >

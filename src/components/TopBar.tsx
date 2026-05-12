@@ -1,5 +1,5 @@
 "use client";
-
+import { FaInstagram } from "react-icons/fa";
 import {
   Clock3,
   MapPin,
@@ -53,35 +53,23 @@ export default function TopBar() {
           </div>
 
           {/* Instagram */}
-          <a
-            href="#"
-            className="text-red-500 transition-colors duration-300 hover:text-white"
-          >
+         <a
+  href="https://www.instagram.com/detailingg.lm/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 transition-colors duration-300"
+>
 
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <rect
-                x="2"
-                y="2"
-                width="20"
-                height="20"
-                rx="5"
-                ry="5"
-              />
+  <FaInstagram
+    size={15}
+    className="text-red-500"
+  />
 
-              <path d="M16 11.37a4 4 0 1 1-7.999.001A4 4 0 0 1 16 11.37z" />
+  <span className="text-[11px] uppercase tracking-[0.2em] text-gray-400 transition-colors duration-300 hover:text-white">
+    @detailingg.lm
+  </span>
 
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-            </svg>
-
-          </a>
+</a>
 
         </div>
 

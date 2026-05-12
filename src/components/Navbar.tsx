@@ -93,20 +93,7 @@ export default function Navbar() {
 
   return (
 
-    <motion.header
-      style={{
-        willChange: "transform",
-      }}
-      initial={{
-        y: -100,
-      }}
-      animate={{
-        y: 0,
-      }}
-      transition={{
-        duration: 0.7,
-        ease: "easeOut",
-      }}
+    <header
       className={`relative z-50 w-full border-b border-white/10 transition-[background-color,backdrop-filter] duration-300 ${
         scrolled
           ? "bg-black/75 backdrop-blur-md"
@@ -201,7 +188,7 @@ export default function Navbar() {
 
       </div>
 
-    </motion.header>
+    </header>
 
   );
 
