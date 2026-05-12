@@ -1,17 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
+
 import { Menu } from "lucide-react";
 
-const links = [
-  { label: "Inicio", href: "home" },
-  { label: "Servicios", href: "services" },
-  { label: "Trabajos", href: "works" },
-  { label: "Nosotros", href: "about" },
-  { label: "Opiniones", href: "testimonials" },
-  { label: "Contacto", href: "contact" },
-];
+import Button from "@/components/ui/Button";
+
+import { navigationLinks } from "@/constants/navigation";
 
 export default function Navbar() {
 
@@ -120,7 +117,7 @@ export default function Navbar() {
         {/* NAVIGATION */}
         <nav className="hidden items-center gap-10 md:flex">
 
-          {links.map((link) => {
+          {navigationLinks.map((link) => {
 
             const isActive = activeSection === link.href;
 
@@ -168,14 +165,14 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:block">
 
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="bg-red-500 px-6 py-3 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:scale-105 hover:bg-red-600"
+          <Button
+            variant="primary"
+            className="px-6 py-3 text-xs tracking-[0.2em]"
           >
 
             Reserva tu turno
 
-          </button>
+          </Button>
 
         </div>
 

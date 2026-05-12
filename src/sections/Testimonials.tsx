@@ -1,6 +1,12 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
 import {
   Star,
   Quote,
@@ -8,31 +14,9 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-import {
-  useEffect,
-  useState,
-} from "react";
+import { testimonials } from "@/data/testimonials";
 
-const testimonials = [
-  {
-    name: "Lucas M.",
-    role: "Cliente Premium",
-    image: "/images/client-1.jpg",
-    text: "Increíble trabajo. El auto quedó mejor que cuando salió del concesionario. Atención impecable y muchísimo detalle.",
-  },
-  {
-    name: "Franco R.",
-    role: "Protección Cerámica",
-    image: "/images/client-2.jpg",
-    text: "La protección cerámica cambió completamente el brillo del vehículo. Muy profesionales y responsables.",
-  },
-  {
-    name: "Santiago L.",
-    role: "Detailing Completo",
-    image: "/images/client-3.jpg",
-    text: "Excelente experiencia de principio a fin. El interior quedó literalmente nuevo. Súper recomendados.",
-  },
-];
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function Testimonials() {
 
@@ -73,9 +57,9 @@ export default function Testimonials() {
   return (
 
     <section
-  id="testimonials"
-  className="relative overflow-hidden bg-black py-24"
->
+      id="testimonials"
+      className="relative overflow-hidden bg-black py-24"
+    >
 
       {/* Background Glow */}
       <div className="absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-red-500/10 blur-[160px]" />
@@ -83,30 +67,26 @@ export default function Testimonials() {
       {/* Texture */}
       <div className="absolute inset-0 opacity-[0.015] [background-image:radial-gradient(#ffffff_1px,transparent_1px)] [background-size:30px_30px]" />
 
-{/* Background Image */}
-<div className="absolute inset-0">
+      {/* Background Image */}
+      <div className="absolute inset-0">
 
-  {/* IMAGE */}
-  <img
-    src="/images/final.webp"
-    alt="Background"
-    className="h-full w-full object-cover opacity-45"
-  />
+        <img
+          src="/images/final.webp"
+          alt="Background"
+          className="h-full w-full object-cover opacity-45"
+        />
 
-  {/* DARK OVERLAY */}
-  <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/55" />
 
-  {/* RED CINEMATIC GLOW */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-red-900/10 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-red-900/10 to-black/60" />
 
-  {/* EXTRA RED LIGHT */}
-  <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-red-500/15 blur-[140px]" />
+        <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-red-500/15 blur-[140px]" />
 
-</div>
+      </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
 
-        {/* HEADER */}
+        {/* Header */}
         <motion.div
           initial={{
             opacity: 0,
@@ -122,25 +102,13 @@ export default function Testimonials() {
           viewport={{
             once: true,
           }}
-          className="mb-16 text-center"
+          className="mb-16"
         >
 
-          <span className="text-xs uppercase tracking-[0.4em] text-red-500">
-
-            Lo Que Dicen Nuestros Clientes
-
-          </span>
-
-          <h2 className="mt-4 font-[family-name:var(--font-bebas)] text-5xl uppercase leading-none text-white md:text-7xl">
-
-            Su Satisfacción,
-            <span className="block">
-              Nuestra Mejor Garantía
-            </span>
-
-          </h2>
-
-          <div className="mx-auto mt-5 h-[2px] w-20 bg-red-500" />
+          <SectionTitle
+            label="Lo Que Dicen Nuestros Clientes"
+            title="Su Satisfacción, Nuestra Mejor Garantía"
+          />
 
         </motion.div>
 
@@ -215,7 +183,7 @@ export default function Testimonials() {
                   <img
                     src={testimonials[activeIndex].image}
                     alt={testimonials[activeIndex].name}
-                    className="h-16 w-16 rounded-full object-cover border border-white/10"
+                    className="h-16 w-16 rounded-full border border-white/10 object-cover"
                   />
 
                   <div>

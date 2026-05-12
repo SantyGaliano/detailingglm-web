@@ -2,6 +2,8 @@
 
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
+import Button from "@/components/ui/Button";
+
 export default function Hero() {
 
   const mouseX = useMotionValue(0);
@@ -32,10 +34,11 @@ export default function Hero() {
 
   return (
 
-   <section
-  id="home"
-  className="relative flex min-h-screen overflow-hidden bg-black"
->
+    <section
+      id="home"
+      className="relative flex min-h-screen overflow-hidden bg-black"
+      onMouseMove={handleMouseMove}
+    >
 
       {/* VIDEO BACKGROUND */}
       <motion.div
@@ -91,17 +94,17 @@ export default function Hero() {
       <div className="absolute inset-0 shadow-[inset_0_0_250px_rgba(0,0,0,0.9)]" />
 
       {/* CONTENT */}
-      <div className="relative z-20 mx-auto flex w-full max-w-7xl items-center px-6 pt-36 pb-24 lg:px-10">
+      <div className="relative z-20 mx-auto flex w-full max-w-7xl items-center px-6 pb-24 pt-36 lg:px-10">
 
         <motion.div
           initial={{
-  opacity: 0,
-  y: 40,
-}}
-animate={{
-  opacity: 1,
-  y: 0,
-}}
+            opacity: 0,
+            y: 40,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
           transition={{
             duration: 1.2,
             ease: [0.22, 1, 0.36, 1],
@@ -132,11 +135,15 @@ animate={{
             CUIDAMOS TU AUTO
 
             <span className="block text-white">
+
               COMO SI FUERA
+
             </span>
 
             <span className="block text-red-500">
+
               NUESTRO.
+
             </span>
 
           </h1>
@@ -154,17 +161,17 @@ animate={{
           {/* BUTTONS */}
           <div className="mt-3 flex flex-wrap items-center gap-4">
 
-            <button className="bg-red-500 px-8 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:scale-[1.03] hover:bg-red-600">
+            <Button variant="primary">
 
               Reservar Turno
 
-            </button>
+            </Button>
 
-            <button className="border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold uppercase tracking-[0.25em] text-white bg-black/40 transition-all duration-300 hover:border-white hover:bg-white hover:text-black">
+            <Button variant="secondary">
 
               Ver Trabajos
 
-            </button>
+            </Button>
 
           </div>
 
@@ -178,4 +185,5 @@ animate={{
     </section>
 
   );
+
 }

@@ -1,36 +1,24 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
+import Image from "next/image";
+
 import {
   ChevronLeft,
   ChevronRight,
- ArrowUpRight,
+  ArrowUpRight,
 } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 
-const works = [
-  {
-    image: "/images/pulido1.webp",
-    title: "Pulido Profesional",
-    number: "01",
-  },
-  {
-    image: "/images/interior.webp",
-    title: "Interior Detallado",
-    number: "02",
-  },
-  {
-    image: "/images/exterior.webp",
-    title: "Detailing Exterior",
-    number: "03",
-  },
-  {
-    image: "/images/ceramica1.webp",
-    title: "Protección Cerámica",
-    number: "05",
-  },
-];
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import { works } from "@/data/works";
+
+import Button from "@/components/ui/Button";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function Works() {
 
@@ -103,26 +91,13 @@ export default function Works() {
           viewport={{
             once: true,
           }}
-          className="mb-16 text-center"
+          className="mb-16"
         >
 
-          <span className="text-xs uppercase tracking-[0.4em] text-red-500">
-
-            Trabajos Realizados
-
-          </span>
-
-          <h2 className="mt-4 font-[family-name:var(--font-bebas)] text-5xl uppercase leading-none text-white md:text-7xl">
-
-            Resultados Que Hablan
-
-            <span className="block">
-              Por Sí Solos
-            </span>
-
-          </h2>
-
-          <div className="mx-auto mt-5 h-[2px] w-20 bg-red-500" />
+          <SectionTitle
+            label="Trabajos Realizados"
+            title="Resultados Que Hablan Por Sí Solos"
+          />
 
         </motion.div>
 
@@ -182,7 +157,6 @@ export default function Works() {
               className="group relative h-[540px] w-full max-w-[860px] overflow-hidden rounded-[34px] border border-red-500/20"
             >
 
-              {/* Image */}
               <Image
                 src={works[activeIndex].image}
                 alt={works[activeIndex].title}
@@ -295,15 +269,9 @@ export default function Works() {
         {/* CTA */}
         <div className="mt-16 flex justify-center">
 
-          <button className="group relative overflow-hidden border border-red-500/20 bg-black px-12 py-5 text-sm font-semibold uppercase tracking-[0.35em] text-white transition-all duration-500 hover:border-red-500/40">
+          <Button variant="secondary">
 
-            <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-
-              <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/20 blur-3xl" />
-
-            </div>
-
-            <span className="relative z-10 flex items-center gap-4">
+            <span className="flex items-center gap-4">
 
               Ver Más Trabajos
 
@@ -314,7 +282,7 @@ export default function Works() {
 
             </span>
 
-          </button>
+          </Button>
 
         </div>
 
@@ -323,4 +291,5 @@ export default function Works() {
     </section>
 
   );
+
 }

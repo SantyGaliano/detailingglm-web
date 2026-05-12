@@ -1,48 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   ShieldCheck,
   Sparkles,
-  Clock3,
   BadgeCheck,
 } from "lucide-react";
 
-const benefits = [
-  {
-    icon: ShieldCheck,
-    title: "Experiencia Profesional",
-    description:
-      "Años trabajando en detailing premium con resultados impecables.",
-  },
-  {
-    icon: Sparkles,
-    title: "Productos Premium",
-    description:
-      "Utilizamos productos de alta calidad para máxima protección.",
-  },
-  {
-    icon: Clock3,
-    title: "Turnos Ágiles",
-    description:
-      "Reservas rápidas y atención eficiente para cada cliente.",
-  },
-  {
-    icon: BadgeCheck,
-    title: "Resultados Garantizados",
-    description:
-      "Cada detalle está pensado para superar expectativas.",
-  },
-];
+import { benefits } from "@/data/benefits";
+
+import Button from "@/components/ui/Button";
+import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function About() {
 
   return (
 
     <section
-  id="about"
-  className="relative overflow-hidden bg-black py-24"
->
+      id="about"
+      className="relative overflow-hidden bg-black py-24"
+    >
 
       {/* Ambient Glow */}
       <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-red-500/10 blur-[140px]" />
@@ -75,20 +53,11 @@ export default function About() {
             }}
           >
 
-            <span className="text-xs uppercase tracking-[0.4em] text-red-500">
-
-              Conócenos
-
-            </span>
-
-            <h2 className="mt-5 font-[family-name:var(--font-bebas)] text-5xl uppercase leading-[0.95] text-white md:text-7xl">
-
-              Somos Apasionados
-              <span className="block text-red-500">
-                Por Los Detalles
-              </span>
-
-            </h2>
+            <SectionTitle
+              label="Conócenos"
+              title="Somos Apasionados Por Los Detalles"
+              centered={false}
+            />
 
             <p className="mt-6 max-w-xl text-[15px] leading-[2] text-gray-300">
 
@@ -164,22 +133,11 @@ export default function About() {
             {/* BUTTON */}
             <div className="mt-12">
 
-              <button className="group relative overflow-hidden border border-red-500/20 bg-black px-10 py-5 text-sm font-semibold uppercase tracking-[0.35em] text-white transition-all duration-500 hover:border-red-500/40">
+              <Button variant="secondary">
 
-                {/* Glow */}
-                <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                Más Sobre Nosotros
 
-                  <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/20 blur-3xl" />
-
-                </div>
-
-                <span className="relative z-10">
-
-                  Más Sobre Nosotros
-
-                </span>
-
-              </button>
+              </Button>
 
             </div>
 
@@ -208,59 +166,59 @@ export default function About() {
             <div className="absolute -inset-10 rounded-full bg-red-500/10 blur-[120px]" />
 
             {/* Ambient Glow */}
-<div className="absolute right-[-10%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-red-500/20 blur-[140px]" />
+            <div className="absolute right-[-10%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-red-500/20 blur-[140px]" />
 
-<div className="absolute bottom-0 right-20 h-[250px] w-[250px] rounded-full bg-red-500/10 blur-[100px]" />
+            <div className="absolute bottom-0 right-20 h-[250px] w-[250px] rounded-full bg-red-500/10 blur-[100px]" />
 
-{/* Image */}
-<div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-black">
+            {/* Image */}
+            <div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-black">
 
-  {/* Red Border Glow */}
-  <div className="absolute inset-0 z-10 rounded-[34px] border border-red-500/0 transition-all duration-500 group-hover:border-red-500/20" />
+              {/* Red Border Glow */}
+              <div className="absolute inset-0 z-10 rounded-[34px] border border-red-500/0 transition-all duration-500 group-hover:border-red-500/20" />
 
-  {/* Light Leak */}
-  <div className="absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/[0.03] to-red-500/[0.08] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              {/* Light Leak */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/[0.03] to-red-500/[0.08] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-  {/* Red Ambient Reflection */}
-  <div className="absolute bottom-[-20%] left-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-red-500/20 blur-[120px]" />
+              {/* Red Ambient Reflection */}
+              <div className="absolute bottom-[-20%] left-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-red-500/20 blur-[120px]" />
 
-  <img
-    src="/images/about.webp"
-    alt="Detailing Studio"
-    className="h-[650px] w-full object-cover brightness-[0.82] contrast-110 saturate-125 transition-all duration-700 group-hover:scale-[1.02] group-hover:brightness-[0.95]"
-  />
+              <img
+                src="/images/about.webp"
+                alt="Detailing Studio"
+                className="h-[650px] w-full object-cover brightness-[0.82] contrast-110 saturate-125 transition-all duration-700 group-hover:scale-[1.02] group-hover:brightness-[0.95]"
+              />
 
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-  {/* Floating Card */}
-  <div className="absolute bottom-6 left-6 right-6 z-20 rounded-[24px] border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+              {/* Floating Card */}
+              <div className="absolute bottom-6 left-6 right-6 z-20 rounded-[24px] border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
 
-    <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between">
 
-      <div>
+                  <div>
 
-        <span className="text-[10px] uppercase tracking-[0.35em] text-red-500">
+                    <span className="text-[10px] uppercase tracking-[0.35em] text-red-500">
 
-          Detailingg.lm
+                      Detailingg.lm
 
-        </span>
+                    </span>
 
-        <h3 className="mt-3 font-[family-name:var(--font-bebas)] text-4xl uppercase leading-none text-white">
+                    <h3 className="mt-3 font-[family-name:var(--font-bebas)] text-4xl uppercase leading-none text-white">
 
-          Calidad Premium
+                      Calidad Premium
 
-        </h3>
+                    </h3>
 
-      </div>
+                  </div>
 
-      <div className="h-[2px] w-16 bg-red-500" />
+                  <div className="h-[2px] w-16 bg-red-500" />
 
-    </div>
+                </div>
 
-  </div>
+              </div>
 
-</div>
+            </div>
 
           </motion.div>
 
@@ -269,7 +227,6 @@ export default function About() {
         {/* BENEFITS */}
         <div className="mt-32">
 
-          {/* Header */}
           <motion.div
             initial={{
               opacity: 0,
@@ -285,25 +242,13 @@ export default function About() {
             viewport={{
               once: true,
             }}
-            className="mb-14 text-center"
+            className="mb-14"
           >
 
-            <span className="text-xs uppercase tracking-[0.4em] text-red-500">
-
-              ¿Por Qué Elegirnos?
-
-            </span>
-
-            <h2 className="mt-4 font-[family-name:var(--font-bebas)] text-5xl uppercase leading-none text-white md:text-7xl">
-
-              Calidad, Confianza
-              <span className="block">
-                y Compromiso
-              </span>
-
-            </h2>
-
-            <div className="mx-auto mt-5 h-[2px] w-20 bg-red-500" />
+            <SectionTitle
+              label="¿Por Qué Elegirnos?"
+              title="Calidad, Confianza y Compromiso"
+            />
 
           </motion.div>
 
