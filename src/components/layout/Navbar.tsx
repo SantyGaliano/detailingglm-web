@@ -8,6 +8,8 @@ import { Menu } from "lucide-react";
 
 import Button from "@/components/ui/Button";
 
+import { useBookingModal } from "@/store/useBookingModal";
+
 import { navigationLinks } from "@/constants/navigation";
 
 export default function Navbar() {
@@ -15,6 +17,8 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   const [scrolled, setScrolled] = useState(false);
+
+  const { open } = useBookingModal();
 
   useEffect(() => {
 
@@ -166,9 +170,10 @@ export default function Navbar() {
         <div className="-mr-4 hidden md:block lg:-mr-8">
 
           <Button
-            variant="primary"
-            className="px-6 py-3 text-xs tracking-[0.2em]"
-          >
+  onClick={open}
+  variant="primary"
+  className="px-6 py-3 text-xs tracking-[0.2em]"
+>
 
             Reserva tu turno
 

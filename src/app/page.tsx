@@ -2,6 +2,8 @@ import Header from "@/components/layout/Header";
 
 import CustomCursor from "@/components/effects/CustomCursor";
 import WhatsAppWidget from "@/components/widgets/WhatsAppWidget";
+import BookingModal from "@/components/modals/BookingModal";
+import SuccessModal from "@/components/modals/SuccessModal";
 
 import Hero from "@/sections/Hero";
 import Services from "@/sections/Services";
@@ -57,6 +59,10 @@ export default function Home() {
       <CTASection />
 
       <Footer />
+
+      <BookingModal />
+
+      <SuccessModal />
 
     </main>
 

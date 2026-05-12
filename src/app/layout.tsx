@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Bebas_Neue, Inter, Geist } from "next/font/google";
+import { Toaster } from "sonner";
 
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const bebas = Bebas_Neue({
   subsets: ["latin"],
@@ -25,11 +29,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" className={cn("font-sans", geist.variable)}>
       <body
         className={`${bebas.variable} ${inter.variable} antialiased`}
       >
         {children}
+
+        <Toaster
+  position="top-right"
+  richColors
+  theme="dark"
+/>
       </body>
     </html>
   );

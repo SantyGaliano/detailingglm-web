@@ -1,15 +1,16 @@
 import { ReactNode } from "react";
 
-interface ButtonProps {
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: "primary" | "secondary";
-  className?: string;
 }
 
 export default function Button({
   children,
   variant = "primary",
   className = "",
+  ...props
 }: ButtonProps) {
 
   const baseStyles =
@@ -26,6 +27,7 @@ export default function Button({
   return (
 
     <button
+      {...props}
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
 

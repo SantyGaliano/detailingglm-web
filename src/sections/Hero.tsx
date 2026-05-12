@@ -1,34 +1,59 @@
 "use client";
 
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
 
-  const mouseX = useMotionValue(0);
+  const mouseX =
+    useMotionValue(0);
 
-  const mouseY = useMotionValue(0);
+  const mouseY =
+    useMotionValue(0);
 
-  const backgroundX = useTransform(mouseX, [-500, 500], [-2, 2]);
+  // Solo el glow usa parallax.
+  // NO mover el video fullscreen.
+  const glowX =
+    useTransform(
+      mouseX,
+      [-500, 500],
+      [-10, 10]
+    );
 
-  const backgroundY = useTransform(mouseY, [-500, 500], [-2, 2]);
+  const glowY =
+    useTransform(
+      mouseY,
+      [-500, 500],
+      [-10, 10]
+    );
 
-  const glowX = useTransform(mouseX, [-500, 500], [-4, 4]);
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
 
-  const glowY = useTransform(mouseY, [-500, 500], [-4, 4]);
+    const {
+      clientX,
+      clientY,
+    } = e;
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const centerX =
+      window.innerWidth / 2;
 
-    const { clientX, clientY } = e;
+    const centerY =
+      window.innerHeight / 2;
 
-    const centerX = window.innerWidth / 2;
+    mouseX.set(
+      clientX - centerX
+    );
 
-    const centerY = window.innerHeight / 2;
-
-    mouseX.set(clientX - centerX);
-
-    mouseY.set(clientY - centerY);
+    mouseY.set(
+      clientY - centerY
+    );
 
   };
 
@@ -36,18 +61,12 @@ export default function Hero() {
 
     <section
       id="home"
-      className="relative flex min-h-screen overflow-hidden bg-black"
+      className="relative z-0 flex min-h-screen overflow-hidden bg-black"
       onMouseMove={handleMouseMove}
     >
 
       {/* VIDEO BACKGROUND */}
-      <motion.div
-        style={{
-          x: backgroundX,
-          y: backgroundY,
-        }}
-        className="gpu absolute inset-0 scale-[1.03]"
-      >
+      <div className="absolute inset-0 scale-[1.03]">
 
         <video
           autoPlay
@@ -55,7 +74,7 @@ export default function Hero() {
           loop
           playsInline
           preload="metadata"
-          className="h-full w-full object-cover"
+          className="pointer-events-none h-full w-full object-cover"
         >
 
           <source
@@ -65,12 +84,13 @@ export default function Hero() {
 
         </video>
 
-      </motion.div>
+      </div>
 
-      {/* OVERLAYS */}
-      <div className="absolute inset-0 bg-black/35" />
+      {/* DARK OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 bg-black/35" />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/10" />
+      {/* GRADIENT OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/10" />
 
       {/* AMBIENT GLOW */}
       <motion.div
@@ -79,19 +99,29 @@ export default function Hero() {
           y: glowY,
         }}
         animate={{
-          opacity: [0.4, 0.7, 0.4],
-          scale: [1, 1.08, 1],
+          opacity: [0.35, 0.65, 0.35],
+          scale: [1, 1.06, 1],
         }}
         transition={{
           duration: 6,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-red-500/10 blur-[60px]"
+        className="
+          pointer-events-none
+          absolute
+          right-0
+          top-0
+          h-[420px]
+          w-[420px]
+          rounded-full
+          bg-red-500/10
+          blur-[80px]
+        "
       />
 
       {/* VIGNETTE */}
-      <div className="absolute inset-0 shadow-[inset_0_0_250px_rgba(0,0,0,0.9)]" />
+      <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_250px_rgba(0,0,0,0.9)]" />
 
       {/* CONTENT */}
       <div className="relative z-20 mx-auto flex w-full max-w-7xl items-center px-6 pb-24 pt-36 lg:px-10">
@@ -151,10 +181,12 @@ export default function Hero() {
           {/* DESCRIPTION */}
           <p className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-[15px] leading-[1.9] text-gray-300 md:text-[16px]">
 
-            En detailingg.lm brindamos servicios de lavado y detailing
-            profesional para que tu auto luzca siempre impecable,
-            con un cuidado integral que resalta su estética
-            y protege cada detalle.
+            En detailingg.lm brindamos servicios
+            de lavado y detailing profesional
+            para que tu auto luzca siempre
+            impecable, con un cuidado integral
+            que resalta su estética y protege
+            cada detalle.
 
           </p>
 
@@ -179,7 +211,7 @@ export default function Hero() {
 
       </div>
 
-      {/* Bottom Shadow */}
+      {/* BOTTOM SHADOW */}
       <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-t from-black to-transparent" />
 
     </section>
