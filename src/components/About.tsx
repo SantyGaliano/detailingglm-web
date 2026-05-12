@@ -207,46 +207,60 @@ export default function About() {
             {/* Glow */}
             <div className="absolute -inset-10 rounded-full bg-red-500/10 blur-[120px]" />
 
-            {/* Image */}
-            <div className="group relative overflow-hidden rounded-[34px] border border-white/10">
+            {/* Ambient Glow */}
+<div className="absolute right-[-10%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-red-500/20 blur-[140px]" />
 
-              <img
-                src="/images/about.webp"
-                alt="Detailing Studio"
-                className="h-[650px] w-full object-cover transition-all duration-700 group-hover:brightness-110"
-              />
+<div className="absolute bottom-0 right-20 h-[250px] w-[250px] rounded-full bg-red-500/10 blur-[100px]" />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+{/* Image */}
+<div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-black">
 
-              {/* Floating Card */}
-              <div className="absolute bottom-6 left-6 right-6 rounded-[24px] border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
+  {/* Red Border Glow */}
+  <div className="absolute inset-0 z-10 rounded-[34px] border border-red-500/0 transition-all duration-500 group-hover:border-red-500/20" />
 
-                <div className="flex items-center justify-between">
+  {/* Light Leak */}
+  <div className="absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/[0.03] to-red-500/[0.08] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
-                  <div>
+  {/* Red Ambient Reflection */}
+  <div className="absolute bottom-[-20%] left-1/2 z-0 h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-red-500/20 blur-[120px]" />
 
-                    <span className="text-[10px] uppercase tracking-[0.35em] text-red-500">
+  <img
+    src="/images/about.webp"
+    alt="Detailing Studio"
+    className="h-[650px] w-full object-cover brightness-[0.82] contrast-110 saturate-125 transition-all duration-700 group-hover:scale-[1.02] group-hover:brightness-[0.95]"
+  />
 
-                      Detailingg.lm
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
 
-                    </span>
+  {/* Floating Card */}
+  <div className="absolute bottom-6 left-6 right-6 z-20 rounded-[24px] border border-white/10 bg-black/30 p-6 backdrop-blur-xl">
 
-                    <h3 className="mt-3 font-[family-name:var(--font-bebas)] text-4xl uppercase leading-none text-white">
+    <div className="flex items-center justify-between">
 
-                      Calidad Premium
+      <div>
 
-                    </h3>
+        <span className="text-[10px] uppercase tracking-[0.35em] text-red-500">
 
-                  </div>
+          Detailingg.lm
 
-                  <div className="h-[2px] w-16 bg-red-500" />
+        </span>
 
-                </div>
+        <h3 className="mt-3 font-[family-name:var(--font-bebas)] text-4xl uppercase leading-none text-white">
 
-              </div>
+          Calidad Premium
 
-            </div>
+        </h3>
+
+      </div>
+
+      <div className="h-[2px] w-16 bg-red-500" />
+
+    </div>
+
+  </div>
+
+</div>
 
           </motion.div>
 

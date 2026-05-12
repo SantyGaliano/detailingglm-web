@@ -80,33 +80,42 @@ export default function BeforeAfter() {
       >
 
         {/* DIRTY IMAGE BASE */}
-        <img
-          src="/images/car-before.webp"
-          alt="Before"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+<div className="absolute inset-0">
 
-        {/* CLEAN REVEAL */}
-        <div
-          className="absolute inset-y-0 left-0 overflow-hidden"
-          style={{
-            width: `${sliderPosition}%`,
-          }}
-        >
+  <img
+    src="/images/car-before.webp"
+    alt="Before"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
 
-          <img
-            src="/images/car-after.webp"
-            alt="After"
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+</div>
 
-        </div>
+{/* CLEAN REVEAL */}
+<div
+  className="absolute inset-y-0 left-0 overflow-hidden"
+  style={{
+    width: `${sliderPosition}%`,
+  }}
+>
+
+  <div className="relative h-full w-screen">
+
+    <img
+      src="/images/car-after.webp"
+      alt="After"
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+
+  </div>
+
+</div>
 
         {/* OVERLAYS */}
-<div className="absolute inset-0 bg-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+<div className="absolute inset-0 bg-black/10" />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/15 to-transparent" />
+
+<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
 
         <div className="absolute right-0 top-0 h-[700px] w-[700px] rounded-full bg-red-500/10 blur-[180px]" />
 
