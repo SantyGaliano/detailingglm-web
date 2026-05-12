@@ -8,6 +8,7 @@ import Works from "@/sections/Works";
 import BeforeAfter from "@/sections/BeforeAfter";
 import About from "@/sections/About";
 import Testimonials from "@/sections/Testimonials";
+import CTASection from "@/sections/CTASection";
 
 import Footer from "@/components/layout/Footer";
 
@@ -46,6 +47,8 @@ export default function Home() {
       </div>
 
       <Testimonials />
+
+      <CTASection />
 
       <Footer />
 

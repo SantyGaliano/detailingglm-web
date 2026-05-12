@@ -98,12 +98,12 @@ export default function Navbar() {
       }`}
     >
 
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
+     <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-10">
 
         {/* LOGO */}
         <button
           onClick={() => scrollToSection("home")}
-          className="transition-all duration-300 hover:scale-105"
+          className="-ml-6 transition-all duration-300 hover:scale-105 lg:-ml-10"
         >
 
           <img
@@ -115,7 +115,7 @@ export default function Navbar() {
         </button>
 
         {/* NAVIGATION */}
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden flex-1 items-center justify-center gap-10 md:flex">
 
           {navigationLinks.map((link) => {
 
@@ -163,7 +163,7 @@ export default function Navbar() {
         </nav>
 
         {/* CTA */}
-        <div className="hidden md:block">
+        <div className="-mr-4 hidden md:block lg:-mr-8">
 
           <Button
             variant="primary"

@@ -15,7 +15,7 @@ export default function TopBar() {
       <div className="mx-auto flex h-[44px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
         {/* Left */}
-        <div className="flex items-center gap-8">
+        <div className="-ml-6 flex items-center gap-8 lg:-ml-10">
 
           <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-gray-400">
 
@@ -40,8 +40,7 @@ export default function TopBar() {
         </div>
 
         {/* Right */}
-        <div className="flex items-center gap-6">
-
+        <div className="-mr-4 flex items-center gap-6 lg:-mr-8">
           <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-gray-400">
 
             <Phone size={13} className="text-red-500" />
