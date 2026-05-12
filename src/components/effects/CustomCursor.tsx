@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
@@ -23,11 +24,12 @@ export default function CustomCursor() {
 
       const target = e.target as HTMLElement;
 
-      const clickable =
+      const interactive =
         target.closest("button") ||
-        target.closest("a");
+        target.closest("a") ||
+        target.closest("[data-cursor]");
 
-      setIsPointer(!!clickable);
+      setIsPointer(!!interactive);
 
     };
 
@@ -45,9 +47,9 @@ export default function CustomCursor() {
 
     <motion.div
       animate={{
-        x: position.x - 16,
-        y: position.y - 16,
-        scale: isPointer ? 1.8 : 1,
+        x: position.x - 14,
+        y: position.y - 14,
+        scale: isPointer ? 2.3 : 1,
       }}
       transition={{
         type: "spring",
@@ -55,14 +57,14 @@ export default function CustomCursor() {
         damping: 28,
         mass: 0.5,
       }}
-      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-8 w-8 rounded-full border border-red-500/40 bg-red-500/10 backdrop-blur-md lg:block"
+      className="pointer-events-none fixed left-0 top-0 z-[9999] hidden h-8 w-8 rounded-full border border-white/30 bg-red-500/[0.12] lg:block"
     >
 
       {/* INNER DOT */}
       <div className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500" />
 
       {/* GLOW */}
-      <div className="absolute inset-0 rounded-full bg-red-500/10 blur-md" />
+      <div className="absolute inset-0 rounded-full bg-red-500/25 blur-xl" />
 
     </motion.div>
 

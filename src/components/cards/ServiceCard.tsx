@@ -2,7 +2,10 @@
 
 import { motion } from "framer-motion";
 
-interface ServiceCardProps {
+import type { HTMLMotionProps } from "framer-motion";
+
+interface ServiceCardProps
+  extends HTMLMotionProps<"div"> {
   icon: React.ElementType;
   title: string;
   description: string;
@@ -14,11 +17,13 @@ export default function ServiceCard({
   title,
   description,
   index,
+  ...props
 }: ServiceCardProps) {
 
   return (
 
     <motion.div
+      {...props}
       initial={{
         opacity: 0,
         y: 40,

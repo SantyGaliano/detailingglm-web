@@ -138,6 +138,7 @@ export default function Works() {
           <AnimatePresence mode="wait">
 
             <motion.div
+              data-cursor
               key={activeIndex}
               initial={{
                 opacity: 0,

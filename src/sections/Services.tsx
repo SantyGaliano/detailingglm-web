@@ -56,6 +56,7 @@ export default function Services() {
           {services.map((service, index) => (
 
             <ServiceCard
+              data-cursor
               key={service.title}
               icon={service.icon}
               title={service.title}

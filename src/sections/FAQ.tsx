@@ -79,6 +79,7 @@ export default function FAQ() {
             return (
 
               <motion.div
+                data-cursor
                 key={faq.question}
                 initial={{
                   opacity: 0,

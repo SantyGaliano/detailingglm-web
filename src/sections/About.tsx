@@ -171,7 +171,10 @@ export default function About() {
             <div className="absolute bottom-0 right-20 h-[250px] w-[250px] rounded-full bg-red-500/10 blur-[100px]" />
 
             {/* Image */}
-            <div className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-black">
+            <div
+  data-cursor
+  className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-black"
+>
 
               {/* Red Border Glow */}
               <div className="absolute inset-0 z-10 rounded-[34px] border border-red-500/0 transition-all duration-500 group-hover:border-red-500/20" />
@@ -262,6 +265,7 @@ export default function About() {
               return (
 
                 <motion.div
+                    data-cursor
                   key={benefit.title}
                   initial={{
                     opacity: 0,

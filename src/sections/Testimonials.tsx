@@ -118,6 +118,7 @@ export default function Testimonials() {
           <AnimatePresence mode="wait">
 
             <motion.div
+              data-cursor
               key={activeIndex}
               initial={{
                 opacity: 0,
