@@ -45,7 +45,7 @@ export default function Header() {
         duration: 0.7,
         ease: "easeOut",
       }}
-      className="fixed left-0 top-0 z-50 w-full"
+      className="pointer-events-none fixed left-0 top-0 z-50 w-full"
     >
 
       <TopBar />

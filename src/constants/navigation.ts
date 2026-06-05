@@ -1,26 +1,32 @@
 export const navigationLinks = [
   {
     label: "Inicio",
-    href: "home",
+    section: "home",
+    path: "/",
   },
   {
     label: "Servicios",
-    href: "services",
+    section: "services",
+    path: "/",
   },
   {
     label: "Trabajos",
-    href: "works",
+    section: "works",
+    path: "/trabajos",
   },
   {
     label: "Nosotros",
-    href: "about",
+    section: "about",
+    path: "/",
   },
   {
     label: "Opiniones",
-    href: "testimonials",
+    section: "testimonials",
+    path: "/",
   },
   {
     label: "Contacto",
-    href: "contact",
+    section: "contact",
+    path: "/",
   },
 ];

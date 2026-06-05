@@ -1,10 +1,3 @@
-import Header from "@/components/layout/Header";
-
-import CustomCursor from "@/components/effects/CustomCursor";
-import WhatsAppWidget from "@/components/widgets/WhatsAppWidget";
-import BookingModal from "@/components/modals/BookingModal";
-import SuccessModal from "@/components/modals/SuccessModal";
-
 import Hero from "@/sections/Hero";
 import Services from "@/sections/Services";
 import Works from "@/sections/Works";
@@ -14,19 +7,11 @@ import Testimonials from "@/sections/Testimonials";
 import CTASection from "@/sections/CTASection";
 import FAQ from "@/sections/FAQ";
 
-import Footer from "@/components/layout/Footer";
-
 export default function Home() {
 
   return (
 
     <main className="bg-black text-white">
-
-      <CustomCursor />
-
-      <WhatsAppWidget />
-
-      <Header />
 
       <Hero />
 
@@ -57,12 +42,6 @@ export default function Home() {
       <FAQ />
 
       <CTASection />
-
-      <Footer />
-
-      <BookingModal />
-
-      <SuccessModal />
 
     </main>
 

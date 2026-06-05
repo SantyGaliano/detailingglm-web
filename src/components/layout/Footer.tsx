@@ -1,3 +1,4 @@
+"use client";
 import {
   MapPin,
   Phone,
@@ -5,10 +6,81 @@ import {
 } from "lucide-react";
 
 import { FaInstagram } from "react-icons/fa";
+import { usePathname, useRouter } from "next/navigation";
 
 import { navigationLinks } from "@/constants/navigation";
 
 export default function Footer() {
+
+  const pathname = usePathname();
+
+const router = useRouter();
+
+const navigateToSection = (
+  section: string,
+  path: string
+) => {
+
+  // Trabajos
+if (section === "works") {
+
+  // Si estamos en Home → scroll
+  if (pathname === "/") {
+
+    const element =
+      document.getElementById("works");
+
+    if (!element) return;
+
+    const navbarOffset = 120;
+
+    const offsetTop =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      navbarOffset;
+
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+
+    return;
+
+  }
+
+  // Si estamos fuera del Home
+  router.push("/trabajos");
+
+  return;
+
+}
+
+  if (pathname !== "/") {
+
+    router.push(`/#${section}`);
+
+    return;
+
+  }
+
+  const element =
+    document.getElementById(section);
+
+  if (!element) return;
+
+  const navbarOffset = 120;
+
+  const offsetTop =
+    element.getBoundingClientRect().top +
+    window.pageYOffset -
+    navbarOffset;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: "smooth",
+  });
+
+};
 
   return (
 
@@ -56,7 +128,13 @@ export default function Footer() {
               {navigationLinks.map((link) => (
 
                 <button
-                  key={link.href}
+  key={link.section}
+  onClick={() =>
+    navigateToSection(
+      link.section,
+      link.path
+    )
+  }
                   className="w-fit text-sm uppercase tracking-[0.2em] text-gray-400 transition-colors duration-300 hover:text-red-500"
                 >
 

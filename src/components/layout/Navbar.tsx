@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname, useRouter } from "next/navigation";
+
 import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
@@ -19,6 +21,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   const { open } = useBookingModal();
+
+  const pathname = usePathname();
+
+const router = useRouter();
 
   useEffect(() => {
 
@@ -72,9 +78,19 @@ export default function Navbar() {
 
   }, []);
 
-  const scrollToSection = (id: string) => {
+const navigateToSection = (
+  section: string,
+  path: string
+) => {
 
-    const element = document.getElementById(id);
+  // Trabajos
+if (section === "works") {
+
+  // Si estamos en Home → scroll
+  if (pathname === "/") {
+
+    const element =
+      document.getElementById("works");
 
     if (!element) return;
 
@@ -90,12 +106,50 @@ export default function Navbar() {
       behavior: "smooth",
     });
 
-  };
+    return;
+
+  }
+
+  // Si estamos fuera del Home
+  router.push("/trabajos");
+
+  return;
+
+}
+
+  // Si NO estamos en Home
+  if (pathname !== "/") {
+
+    router.push(`/#${section}`);
+
+    return;
+
+  }
+
+  // Scroll interno Home
+  const element =
+    document.getElementById(section);
+
+  if (!element) return;
+
+  const navbarOffset = 120;
+
+  const offsetTop =
+    element.getBoundingClientRect().top +
+    window.pageYOffset -
+    navbarOffset;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: "smooth",
+  });
+
+};
 
   return (
 
     <header
-      className={`relative z-50 w-full border-b border-white/10 transition-[background-color,backdrop-filter] duration-300 ${
+      className={`pointer-events-auto relative z-50 w-full border-b border-white/10 transition-[background-color,backdrop-filter] duration-300 ${
         scrolled
           ? "bg-black/75 backdrop-blur-md"
           : "bg-black/30 backdrop-blur-sm"
@@ -106,7 +160,7 @@ export default function Navbar() {
 
         {/* LOGO */}
         <button
-          onClick={() => scrollToSection("home")}
+          onClick={() => router.push("/")}
           className="-ml-6 transition-all duration-300 hover:scale-105 lg:-ml-10"
         >
 
@@ -123,13 +177,19 @@ export default function Navbar() {
 
           {navigationLinks.map((link) => {
 
-            const isActive = activeSection === link.href;
+            const isActive =
+  activeSection === link.section;
 
             return (
 
               <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
+                key={link.section}
+                onClick={() =>
+  navigateToSection(
+    link.section,
+    link.path
+  )
+}
                 className="group relative"
               >
 

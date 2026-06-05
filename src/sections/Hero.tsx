@@ -5,14 +5,16 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-
+import { useRouter } from "next/navigation";
 import Button from "@/components/ui/Button";
+import { useBookingModal } from "@/store/useBookingModal";
 
 export default function Hero() {
 
   const mouseX =
     useMotionValue(0);
-
+const { open } = useBookingModal();
+const router = useRouter();
   const mouseY =
     useMotionValue(0);
 
@@ -193,15 +195,23 @@ export default function Hero() {
           {/* BUTTONS */}
           <div className="mt-3 flex flex-wrap items-center gap-4">
 
-            <Button variant="primary">
+            <Button
+  onClick={open}
+  variant="primary"
+>
 
-              Reservar Turno
+  Reservar Turno
 
-            </Button>
+</Button>
 
-            <Button variant="secondary">
+            <Button
+  variant="secondary"
+  onClick={() =>
+    router.push("/trabajos")
+  }
+>
 
-              Ver Trabajos
+  Ver Trabajos
 
             </Button>
 

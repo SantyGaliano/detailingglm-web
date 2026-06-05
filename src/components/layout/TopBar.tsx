@@ -10,7 +10,7 @@ export default function TopBar() {
 
   return (
 
-    <div className="hidden w-full border-b border-white/5 bg-black/95 backdrop-blur-md lg:block">
+   <div className="pointer-events-auto hidden w-full border-b border-white/5 bg-black/95 backdrop-blur-md lg:block">
 
       <div className="mx-auto flex h-[44px] max-w-7xl items-center justify-between px-6 lg:px-10">
 
