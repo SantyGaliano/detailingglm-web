@@ -270,20 +270,28 @@ export default function Works() {
         {/* CTA */}
         <div className="mt-16 flex justify-center">
 
-          <Button variant="secondary">
+         <Button
+  variant="secondary"
+  onClick={() =>
+    window.open(
+      "https://www.instagram.com/detailingg.lm/",
+      "_blank"
+    )
+  }
+>
 
-            <span className="flex items-center gap-4">
+  <span className="flex items-center gap-4">
 
-              Ver Más Trabajos
+    Ver Más Trabajos
 
-              <ArrowUpRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
+    <ArrowUpRight
+      size={18}
+      className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+    />
 
-            </span>
+  </span>
 
-          </Button>
+</Button>
 
         </div>
 

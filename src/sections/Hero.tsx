@@ -207,13 +207,16 @@ const router = useRouter();
             <Button
   variant="secondary"
   onClick={() =>
-    router.push("/trabajos")
+    window.open(
+      "https://www.instagram.com/detailingg.lm/",
+      "_blank"
+    )
   }
 >
 
   Ver Trabajos
 
-            </Button>
+</Button>
 
           </div>
 
