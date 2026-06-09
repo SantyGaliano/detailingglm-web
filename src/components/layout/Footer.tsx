@@ -92,12 +92,12 @@ if (section === "works") {
       {/* Texture */}
       <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(#ffffff_1px,transparent_1px)] [background-size:30px_30px]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 text-center lg:px-10 lg:py-16 lg:text-left">
 
-        <div className="grid gap-14 lg:grid-cols-4">
+        <div className="grid gap-10 lg:grid-cols-4 lg:gap-14">
 
           {/* BRAND */}
-          <div>
+          <div className="flex flex-col items-center lg:items-start">
 
             <img
               src="/logo/logo.png"
@@ -115,7 +115,7 @@ if (section === "works") {
           </div>
 
           {/* NAVIGATION */}
-          <div>
+          <div className="hidden lg:block">
 
             <h3 className="font-[family-name:var(--font-bebas)] text-2xl uppercase text-white">
 
@@ -149,7 +149,7 @@ if (section === "works") {
           </div>
 
           {/* CONTACT */}
-          <div>
+          <div className="flex flex-col items-center lg:items-start">
 
             <h3 className="font-[family-name:var(--font-bebas)] text-2xl uppercase text-white">
 
@@ -159,7 +159,7 @@ if (section === "works") {
 
             <div className="mt-6 space-y-5">
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center gap-4 lg:justify-start">
 
                 <Phone
                   size={18}
@@ -174,7 +174,7 @@ if (section === "works") {
 
               </div>
 
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center gap-4 lg:justify-start">
 
                 <Mail
                   size={18}
@@ -209,7 +209,7 @@ if (section === "works") {
           </div>
 
           {/* SOCIAL */}
-          <div>
+          <div className="flex flex-col items-center lg:items-start">
 
             <h3 className="font-[family-name:var(--font-bebas)] text-2xl uppercase text-white">
 
@@ -217,8 +217,7 @@ if (section === "works") {
 
             </h3>
 
-            <div className="mt-6">
-
+            <div className="mt-6 flex justify-center lg:justify-start">
   <a
     href="https://instagram.com"
     target="_blank"

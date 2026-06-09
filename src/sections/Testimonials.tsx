@@ -115,7 +115,7 @@ export default function Testimonials() {
         {/* TESTIMONIAL CARD */}
         <div className="relative mx-auto max-w-5xl">
 
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="popLayout">
 
             <motion.div
               data-cursor
@@ -138,8 +138,7 @@ export default function Testimonials() {
               transition={{
                 duration: 0.5,
               }}
-              className="relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl"
-            >
+className="relative min-h-[420px] overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03] p-10 backdrop-blur-xl md:min-h-0"            >
 
               {/* Glow */}
               <div className="absolute right-0 top-0 h-60 w-60 rounded-full bg-red-500/10 blur-3xl" />

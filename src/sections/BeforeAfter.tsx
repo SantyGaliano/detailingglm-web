@@ -135,7 +135,10 @@ export default function BeforeAfter() {
           <div
             onMouseDown={() => setIsDragging(true)}
             onTouchStart={() => setIsDragging(true)}
-            className="absolute left-1/2 top-[80%] z-40 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 cursor-grab items-center justify-center rounded-full border border-white/20 bg-black/70 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-red-500/60 active:cursor-grabbing"
+            className="absolute left-1/2 top-[80%] z-40 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 cursor-grab items-center justify-center rounded-full border border-white/20 bg-black/70 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 hover:border-red-500/60 active:cursor-grabbing select-none touch-none"
+style={{
+  WebkitTapHighlightColor: "transparent",
+}}
           >
 
             <div className="flex items-center gap-[3px]">

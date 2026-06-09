@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 
+import { useBookingModal } from "@/store/useBookingModal";
+
 import {
   ShieldCheck,
   Sparkles,
@@ -14,6 +16,7 @@ import Button from "@/components/ui/Button";
 import SectionTitle from "@/components/ui/SectionTitle";
 
 export default function About() {
+  const { open } = useBookingModal();
 
   return (
 
@@ -133,34 +136,37 @@ export default function About() {
             {/* BUTTON */}
             <div className="mt-12">
 
-              <Button variant="secondary">
+              <Button
+  variant="secondary"
+  onClick={open}
+>
 
-                Más Sobre Nosotros
+  Más Sobre Nosotros
 
-              </Button>
+</Button>
 
             </div>
 
           </motion.div>
 
           {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.96,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.9,
-            }}
-            viewport={{
-              once: true,
-            }}
-            className="relative"
-          >
+<motion.div
+  initial={{
+    opacity: 0,
+    scale: 0.96,
+  }}
+  whileInView={{
+    opacity: 1,
+    scale: 1,
+  }}
+  transition={{
+    duration: 0.9,
+  }}
+  viewport={{
+    once: true,
+  }}
+  className="relative hidden lg:block"
+>
 
             {/* Glow */}
             <div className="absolute -inset-10 rounded-full bg-red-500/10 blur-[120px]" />

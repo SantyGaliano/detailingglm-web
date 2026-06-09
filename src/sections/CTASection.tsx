@@ -19,7 +19,7 @@ export default function CTASection() {
         <img
           src="/images/cta.webp"
           alt="CTA Background"
-          className="h-[210px] w-full object-cover"
+          className="h-[320px] w-full object-cover md:h-[210px]"
         />
 
         {/* Red Overlay */}
@@ -31,17 +31,20 @@ export default function CTASection() {
         {/* Content */}
         <div className="absolute inset-0 z-10">
 
-          <div className="mx-auto flex h-full max-w-7xl flex-col items-center justify-between gap-8 px-6 py-8 md:flex-row lg:px-10">
-
+<div className="mx-auto flex h-full max-w-7xl flex-col items-center justify-center gap-5 px-6 pb-12 pt-10 md:flex-row md:justify-between md:py-8 lg:px-10">
             {/* Left */}
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col items-center gap-4 text-center md:flex-row md:text-left md:items-center md:gap-6">
 
               {/* Icon */}
-             <div className="flex h-24 w-24 items-center justify-center rounded-[28px] border border-white/20 bg-white/10 backdrop-blur-xl">
-
+<div className="flex h-16 w-16 md:h-24 md:w-24 items-center justify-center rounded-[22px] md:rounded-[28px] border border-white/20 bg-white/10 backdrop-blur-xl">
                 <CalendarDays
+  size={36}
+  className="text-white md:hidden"
+/>
+
+<CalendarDays
   size={52}
-  className="text-white"
+  className="hidden text-white md:block"
 />
 
               </div>
@@ -49,7 +52,7 @@ export default function CTASection() {
               {/* Text */}
               <div>
 
-                <h2 className="font-[family-name:var(--font-bebas)] text-3xl uppercase leading-none text-white md:text-5xl">
+                <h2 className="font-[family-name:var(--font-bebas)] text-4xl md:text-5xl uppercase leading-none text-white">
 
                   ¿Listo Para Que Tu Auto Luzca Increíble?
 
@@ -66,13 +69,22 @@ export default function CTASection() {
             </div>
 
             {/* Right */}
-            <div className="shrink-0">
+            <div className="w-full md:w-auto shrink-0">
 
               <Button
   variant="secondary"
-  className="!border-transparent !bg-white px-8 py-4 !text-black hover:!bg-black hover:!text-white"
+  className="
+    w-full
+    md:w-auto
+    !border-transparent
+    !bg-white
+    px-8
+    py-4
+    !text-black
+    hover:!bg-black
+    hover:!text-white
+  "
 >
-
                 Reservá Por WhatsApp
 
               </Button>
