@@ -6,11 +6,15 @@ import { FaWhatsapp } from "react-icons/fa";
 
 import { X } from "lucide-react";
 
+import { useMobileMenu } from "@/store/useMobileMenu";
+
 export default function WhatsAppWidget() {
 
   const [isVisible, setIsVisible] = useState(false);
 
   const [isBubbleVisible, setIsBubbleVisible] = useState(true);
+
+  const { isOpen } = useMobileMenu();
 
   useEffect(() => {
 
@@ -23,6 +27,8 @@ export default function WhatsAppWidget() {
     return () => clearTimeout(timer);
 
   }, []);
+
+  if (isOpen) return null;
 
   return (
 

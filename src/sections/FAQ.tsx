@@ -30,8 +30,9 @@ export default function FAQ() {
   return (
 
     <section
-      className="relative overflow-hidden bg-black py-24"
-    >
+  id="faq"
+  className="relative overflow-hidden bg-black py-24"
+>
 
       {/* Glow */}
       <div className="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-red-500/10 blur-[160px]" />

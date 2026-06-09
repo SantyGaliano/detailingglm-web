@@ -126,9 +126,7 @@ const router = useRouter();
       <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_250px_rgba(0,0,0,0.9)]" />
 
       {/* CONTENT */}
-      <div className="relative z-20 mx-auto flex w-full max-w-7xl items-center px-6 pb-24 pt-36 lg:px-10">
-
-        <motion.div
+<div className="relative z-20 mx-auto flex w-full max-w-7xl items-center px-6 pb-32 pt-12 md:pb-24 md:pt-36 lg:px-10">        <motion.div
           initial={{
             opacity: 0,
             y: 40,
@@ -162,8 +160,7 @@ const router = useRouter();
           </div>
 
           {/* TITLE */}
-          <h1 className="max-w-4xl font-[family-name:var(--font-bebas)] text-[72px] uppercase leading-[0.88] tracking-[0.01em] text-white md:text-[92px] lg:text-[120px]">
-
+<h1 className="max-w-4xl font-[family-name:var(--font-bebas)] text-[58px] uppercase leading-[0.88] tracking-[0.01em] text-white sm:text-[72px] md:text-[92px] lg:text-[120px]">
             CUIDAMOS TU AUTO
 
             <span className="block text-white">
@@ -181,8 +178,7 @@ const router = useRouter();
           </h1>
 
           {/* DESCRIPTION */}
-          <p className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-[15px] leading-[1.9] text-gray-300 md:text-[16px]">
-
+<p className="mt-4 max-w-[320px] font-[family-name:var(--font-inter)] text-[15px] leading-[1.9] text-gray-300 md:max-w-xl md:text-[16px]">
             En detailingg.lm brindamos servicios
             de lavado y detailing profesional
             para que tu auto luzca siempre
@@ -193,11 +189,11 @@ const router = useRouter();
           </p>
 
           {/* BUTTONS */}
-          <div className="mt-3 flex flex-wrap items-center gap-4">
-
+<div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Button
   onClick={open}
   variant="primary"
+  className="w-full sm:w-auto"
 >
 
   Reservar Turno
@@ -206,6 +202,7 @@ const router = useRouter();
 
             <Button
   variant="secondary"
+  className="w-full sm:w-auto"
   onClick={() =>
     window.open(
       "https://www.instagram.com/detailingg.lm/",

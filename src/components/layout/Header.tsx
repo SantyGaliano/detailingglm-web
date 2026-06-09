@@ -15,6 +15,15 @@ export default function Header() {
 
     const handleScroll = () => {
 
+      // En móvil y tablet el header siempre permanece visible
+      if (window.innerWidth < 1024) {
+
+        setHideTopBar(false);
+
+        return;
+
+      }
+
       const currentScroll = window.scrollY;
 
       setHideTopBar(
@@ -23,10 +32,19 @@ export default function Header() {
 
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
-    return () =>
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+
       window.removeEventListener("scroll", handleScroll);
+
+      window.removeEventListener("resize", handleScroll);
+
+    };
 
   }, []);
 

@@ -14,11 +14,21 @@ import { useBookingModal } from "@/store/useBookingModal";
 
 import { navigationLinks } from "@/constants/navigation";
 
+import MobileMenu from "@/components/layout/MobileMenu";
+
+import { useMobileMenu } from "@/store/useMobileMenu";
+
 export default function Navbar() {
 
   const [activeSection, setActiveSection] = useState("home");
 
   const [scrolled, setScrolled] = useState(false);
+
+  const {
+  isOpen: mobileMenuOpen,
+  open: openMobileMenu,
+  close: closeMobileMenu,
+} = useMobileMenu();
 
   const { open } = useBookingModal();
 
@@ -160,9 +170,9 @@ if (section === "works") {
 
         {/* LOGO */}
         <button
-          onClick={() => router.push("/")}
-          className="-ml-6 transition-all duration-300 hover:scale-105 lg:-ml-10"
-        >
+  onClick={() => router.push("/")}
+  className="transition-all duration-300 hover:scale-105"
+>
 
           <img
             src="/logo/logo.png"
@@ -242,13 +252,19 @@ if (section === "works") {
         </div>
 
         {/* MOBILE */}
-        <button className="text-white md:hidden">
-
-          <Menu size={30} />
-
-        </button>
+        <button
+  onClick={openMobileMenu}
+  className="text-white md:hidden"
+>
+  <Menu size={30} />
+</button>
 
       </div>
+
+      <MobileMenu
+  open={mobileMenuOpen}
+  onClose={closeMobileMenu}
+/>
 
     </header>
 
